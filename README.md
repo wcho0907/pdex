@@ -54,6 +54,7 @@
       }
     });
   ```
+---  
 ## markets
 
   Returns all markets information about system.
