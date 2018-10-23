@@ -56,7 +56,7 @@
   ```
 ---  
 ## markets
-<div style="text-align: right"> [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) </div>
+<p align="right"> [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) </p>
 
   Returns all markets information about system.
 
