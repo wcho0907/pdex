@@ -1,8 +1,8 @@
 # pdex
 
-[config](https://github.com/wcho0907/pdex/blob/master/README.md#config) - Returns config data about system. <br/>
-[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets) - Returns all markets information about system.
-[market](https://github.com/wcho0907/pdex/blob/master/README.md#market) - Returns specific market information about system.
+[config](https://github.com/wcho0907/pdex/blob/master/README.md#config): Returns config data about system.<br/>
+[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets): Returns all markets information about system.<br/>
+[market](https://github.com/wcho0907/pdex/blob/master/README.md#market): Returns specific market information about system.<br/>
 
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
 ## config
