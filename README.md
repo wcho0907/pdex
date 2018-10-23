@@ -79,8 +79,8 @@
 	MarketInfo
   - taker - Ethereum networks
   - baseToekn - CHAIN_ID of Ethereum networks(https://github.com/ethereum/
-  		- dfddg
-  		- cxvv
+  	- dfddg
+  	- cxvv
   - contractAddress - exchange contract address based on the network above. (V1)
   - transferProxyAddress - transferProxy contract address based on the network above. (V1)
 
