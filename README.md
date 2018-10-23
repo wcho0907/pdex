@@ -1,4 +1,9 @@
 # pdex
+
+[config](https://github.com/wcho0907/pdex/blob/master/README.md#config) - Returns config data about system.
+[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets) - Returns all markets information about system.
+[market](https://github.com/wcho0907/pdex/blob/master/README.md#market) - Returns specific market information about system.
+
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
 ## config
 
