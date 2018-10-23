@@ -1,12 +1,12 @@
 # pdex
 
-**Show User**
+**config**
 
-  Returns json data about a single user.
+  Returns config data about system.
 
 * **URL**
 
-  /users/:id
+  /v0/pdex/config
 
 * **Method:**
 
@@ -16,7 +16,7 @@
 
    **Required:**
  
-   `id=[integer]`
+   None
 
 * **Data Params**
 
