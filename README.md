@@ -337,3 +337,95 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+
+## orderbook
+
+  Returns bids and asks orders of the market and related information
+
+* **URL**
+
+  /v0/pdex/orderbook
+
+* **Method:**
+
+  `GET`
+  
+*  **Arguments**
+
+   - __baseTokenAddress__: contract address of base token
+   - __quoteTokenAddress__: contract address of quote token
+
+* **Returns**
+
+	Array of bid orderInfo objects(20), array of ask orderInfo objects(20) and related information
+	
+	OrderInfo  bids(20), asks(20)
+  - __makerTokenAddress__:  contract address of the bid/ask token
+  - __takerTokenAddress__:  contract address of the pay token
+  - __makerTokenAmount__:  amount of the bid token
+  - __takerTokenAmount__: amount of the spend token
+  - __expirationUnixTimestampSec__:  expire time of the order
+  - __order_hash__
+  - __intent__: order type
+  - __price__: price of the order 
+  - __amount__: amount of order (current)
+  - __volume__: price * amount
+  - __intentMakerTokenAmount__: origin amount of the bid/ask token
+  - __intentTakerTokenAmount__: origin amount of the spend token
+  - __remainingTakerTokenAmount__: remaining amount of the spend token
+  - __makerTokenName__: name of the bid/ask token
+  - __takerTokenName__: name of the spend token
+
+  Related information
+  - __spread__: value of spread
+  - __maxBidPrice__: current maximum price of bid order
+  - __minAskPrice__: current minimum price of ask order
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+	{
+	  "bids": [
+	    {
+	      "makerTokenAddress": "0xc778417E063141139Fce010982780140Aa0cD5Ab",
+	      "takerTokenAddress": "0x0d0F936Ee4c93e25944694D6C121de94D9760F11",
+	      "makerTokenAmount": "12246548900000000",
+	      "takerTokenAmount": "103270000000000000000",
+	      "expirationUnixTimestampSec": "1540287123040",
+	      "order_hash": "b853c002e257842678a7033f750f39bc19254ef5f3071212f05758710d88f199",
+	      "intent": "buy",
+	      "price": "0.000116070000000000",
+	      "amount": "71.379000000000000000",
+	      "volume": "0.008284960530000000",
+	      "intentMakerTokenAmount": "11986548900000000",
+	      "intentTakerTokenAmount": "103270000000000000000",
+	      "remainingTakerTokenAmount": "71379000000000000000",
+	      "makerTokenName": "WETH",
+	      "takerTokenName": "MTT"
+	    },
+	    ...
+	  ],
+	  "asks": [...],
+	  "spread": "0.0000045700",
+	  "maxBidPrice": "0.000116070000000000",
+	  "minAskPrice": "0.000120640000000000"
+	}
+  ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/market?baseTokenAddress=0x0d0F936Ee4c93e25944694D6C121de94D9760F11&quoteTokenAddress=0xc778417E063141139Fce010982780140Aa0cD5Ab",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
