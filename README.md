@@ -1,6 +1,6 @@
 # pdex
 
-**config**
+## config
 
   Returns config data about system.
 
