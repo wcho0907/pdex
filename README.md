@@ -76,7 +76,7 @@
 	Array of MarketInfo Objects
 	
 	MarketInfo
-  - __taker__:  Taker address of the market
+  - __taker__:  taker address of the market
   - __baseToken__:  base token information of the market
   	- address  contract address of the token
   	- symbol 
