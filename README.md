@@ -430,3 +430,65 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+## challenge
+
+  Returns a message for asking the signature
+
+* **URL**
+
+  /v0/pdex/challenge
+
+* **Method:**
+
+  `POST`
+  
+*  **Arguments**
+
+   - __address__: public address of signer
+
+* **Returns**
+
+	A message for taking as a input to sign for signature and payload for succeeding request
+	
+  - __challenge__:  hex string of message
+
+  payload information
+  - __address__: public address of signer
+  - __ts__: timestamp
+  - __nonce__: nonce
+  - __ecSignature__: empty ecSign field for later use
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+	{
+	 "challenge": "54f1e7b634eb52f0e394e2c182ef098ea46e57d0870d257af2ed981c3b59ce34",
+	 "payload": 
+		 {
+			 "address": "0xB0EdCfBC1aB375E056E3d53fB1367f88fdb327d4", 
+			 "ts": 1540288100, 
+			 "nonce": "730de1d8", 
+			 "ecSignature": {"v": null, "r": null, "s": null}
+		 }
+	}
+  ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/challenge",
+      dataType: "json",
+      type : "POST",
+      data:  {address:  '0xB0EdCfBC1aB375E056E3d53fB1367f88fdb327d4'},
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
