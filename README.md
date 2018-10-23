@@ -1,5 +1,5 @@
 # pdex
-:top:
+
 ## config
 
   Returns config data about system.
