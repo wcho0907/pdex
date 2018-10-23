@@ -20,7 +20,10 @@
 
 * **Returns**
 
-  None
+  - chain
+  - networkId
+  - contractAddress
+  - transferProxyAddress
 
 * **Success Response:**
 
