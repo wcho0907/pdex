@@ -1,5 +1,5 @@
 # pdex
-
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
 ## config
 
   Returns config data about system.
@@ -55,7 +55,8 @@
     });
   ```
 ---  
-[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) ## markets 
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## markets 
 
   Returns all markets information about system.
 
