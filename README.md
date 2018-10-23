@@ -20,10 +20,10 @@
 
 * **Returns**
 
-  - chain
-  - networkId
-  - contractAddress
-  - transferProxyAddress
+  - chain - Ethereum networks
+  - networkId - https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md
+  - contractAddress - exchange contract address based on the network above. (V1)
+  - transferProxyAddress - transferProxy contract address based on the network above. (V1)
 
 * **Success Response:**
 
