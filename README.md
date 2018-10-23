@@ -1,7 +1,7 @@
 # pdex
----
-**Show User**
 ----
+**Show User**
+
   Returns json data about a single user.
 
 * **URL**
