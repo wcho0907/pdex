@@ -36,13 +36,13 @@
     ```
  * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
+   * **Code:** 401 UNAUTHORIZED <br />
+     **Content:** `{ error : "You are unauthorized to make this request." }`
 
 * **Sample Call:**
 
