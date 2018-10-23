@@ -4,7 +4,7 @@
 [markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets): Returns all markets information about system.<br/>
 [market](https://github.com/wcho0907/pdex/blob/master/README.md#market): Returns specific market information about system.<br/>
 [orderbook](https://github.com/wcho0907/pdex/blob/master/README.md#orderbook): Returns bids and asks orders of the market and related information<br/>
-[challenge](): Returns a message for asking the signature<br/>
+[challenge](https://github.com/wcho0907/pdex/blob/master/README.md#challenge): Returns a message for asking the signature<br/>
 ## config
 
   Returns config data about system.
