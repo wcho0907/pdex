@@ -519,7 +519,7 @@
 	A token for authorization and its expire time
 	
   - __token__
-  - __expire__:  expire time of token
+  - __expire__:  expired time of token
   payload information
 
 * **Success Response:**
