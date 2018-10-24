@@ -6,6 +6,7 @@
 [orderbook](https://github.com/wcho0907/pdex/blob/master/README.md#orderbook): Returns bids and asks orders of the market and related information<br/>
 [challenge](https://github.com/wcho0907/pdex/blob/master/README.md#challenge): Returns a message for asking the signature<br/>
 [verify](https://github.com/wcho0907/pdex/blob/master/README.md#verify): Returns the server validation of signature<br/>
+[preporcess](https://github.com/wcho0907/pdex/blob/master/README.md#preprocess): Returns an intent of order for asking the signature<br/>
 ## config
 
   Returns config data about system.
