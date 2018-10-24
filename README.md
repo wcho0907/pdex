@@ -518,9 +518,8 @@
 
 	A token for authorization and its expire time
 	
-  - __token__:  hex string of message
-  - __expire__:  hex string of message
-
+  - __token__
+  - __expire__:  expire time of token
   payload information
 
 * **Success Response:**
