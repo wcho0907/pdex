@@ -703,34 +703,34 @@
   
 *  **Arguments**
 	  order intent information with signature
-  - __intent__
-	  - base: symbol of  base token
-	  - baseTokenAddress: address of base token
-	  - quote: symbol of quote token
-	  - quoteTokenAddress: address of quote token
-	  - amount: amount of order
-	  - volume: price * amount
-	  - price: price of order
-	  - intent: order type (buy/sell)
-	  - feeRate: rate of fee
-	  - feeMinimum: minimum fee
-	  - makerTokenAmount: amount of the maker token
-	  - takerTokenAmount: amount of the taker token
-	  - checksum
-  - __order__
-	  - exchangeContractAddress: contract address of exchange
-	  - maker: address of maker
-	  - taker: address of taker
-	  - feeRecipient: recipient of fee
-	  - makerFee: fee of maker
-	  - takerFee: fee  of taker
-	  - makerTokenAddress: address of maker token
-	  - takerTokenAddress: address of taker token
-	  - makerTokenAmount: amount of maker token
-	  - takerTokenAmount: amount of taker token
-	  - expirationUnixTimestampSec: expired time of order
-	  - salt: salt of the ecSignature
-	  - ecSignature: - returns of signed information (v, r, s)
+	  - __intent__
+		  - base: symbol of  base token
+		  - baseTokenAddress: address of base token
+		  - quote: symbol of quote token
+		  - quoteTokenAddress: address of quote token
+		  - amount: amount of order
+		  - volume: price * amount
+		  - price: price of order
+		  - intent: order type (buy/sell)
+		  - feeRate: rate of fee
+		  - feeMinimum: minimum fee
+		  - makerTokenAmount: amount of the maker token
+		  - takerTokenAmount: amount of the taker token
+		  - checksum
+	  - __order__
+		  - exchangeContractAddress: contract address of exchange
+		  - maker: address of maker
+		  - taker: address of taker
+		  - feeRecipient: recipient of fee
+		  - makerFee: fee of maker
+		  - takerFee: fee  of taker
+		  - makerTokenAddress: address of maker token
+		  - takerTokenAddress: address of taker token
+		  - makerTokenAmount: amount of maker token
+		  - takerTokenAmount: amount of taker token
+		  - expirationUnixTimestampSec: expired time of order
+		  - salt: salt of the ecSignature
+		  - ecSignature: - returns of signed information (v, r, s)
 * **Returns**
 			validation information
 			
