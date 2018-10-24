@@ -688,3 +688,120 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## submit
+
+  Returns an intent of order for asking the signature
+
+* **URL**
+
+  /v0/pdex/submit
+
+* **Method:**
+
+  `POST`
+  
+*  **Arguments**
+	  order intent information with signature
+  - __intent__
+	  - base: symbol of  base token
+	  - baseTokenAddress: address of base token
+	  - quote: symbol of quote token
+	  - quoteTokenAddress: address of quote token
+	  - amount: amount of order
+	  - volume: price * amount
+	  - price: price of order
+	  - intent: order type (buy/sell)
+	  - feeRate: rate of fee
+	  - feeMinimum: minimum fee
+	  - makerTokenAmount: amount of the maker token
+	  - takerTokenAmount: amount of the taker token
+	  - checksum
+  - __order__
+	  - exchangeContractAddress: contract address of exchange
+	  - maker: address of maker
+	  - taker: address of taker
+	  - feeRecipient: recipient of fee
+	  - makerFee: fee of maker
+	  - takerFee: fee  of taker
+	  - makerTokenAddress: address of maker token
+	  - takerTokenAddress: address of taker token
+	  - makerTokenAmount: amount of maker token
+	  - takerTokenAmount: amount of taker token
+	  - expirationUnixTimestampSec: expired time of order
+	  - salt: salt of the ecSignature
+	  - ecSignature: - returns of signed information (v, r, s)
+* **Returns**
+			validation information
+			
+  - order_hash
+  - token
+  - expire: expired time of token
+	
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+		{
+			"order_hash": "9045d49eb0112ac6b860cfc25e5146cbf199696444ee6d344e523ec20564fba1",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY3LCJpYXQiOjE1NDAzNjYwMTgsImV4cCI6MTU0MDM3MTQxOH0.hmtULkVH6JyCpn1Vk_l8v_l_18KEs8RU3QxrQkVZbf8", 
+			"expire": 1540371418
+		 }
+  ```
+ * **Error Response:**
+
+   * **Code:** 400 Bad Request <br />
+		  
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/submit",
+      dataType: "json",
+      type : "POST",
+      data:
+		{
+			"order":{
+				"exchangeContractAddress":"0x479cc461fecd078f766ecc58533d6f69580cf3ac",
+				"maker":"0x783a242da80a6142f6b48bdbd4c1b9c6e1e0042f",
+				"taker":"0x54e0bfe2f148edaba0570bb1bf52a93fae478c9f",
+				"makerTokenAddress":"0xc778417e063141139fce010982780140aa0cd5ab",
+				"takerTokenAddress":"0x2e11c118123e36c44e3d964bf0405552eea04605",
+				"feeRecipient":"0x0000000000000000000000000000000000000000",
+				"makerTokenAmount":"427213440000000000",
+				"takerTokenAmount":"123000000000000000000",
+				"makerFee":"0",
+				"takerFee":"0",
+				"expirationUnixTimestampSec":"1540452413472",
+				"salt":"22613246247772084676703019028017946719169894782291294370367974348516328675199",
+				"ecSignature":{
+					"v":27,
+					"r":"0xa77840b483744efb0d08b7e69e4b1c2b8904b2437d3ff72bb75b12eaa3161764",
+					"s":"0x4633b3ca09c306a9670169fcaafc03ef6da279be7e2ee9358a84b21ae451bdd7"
+				}
+			},
+			"intent":{
+				"base":"TEST1",
+				"baseTokenAddress":"0x2e11C118123e36C44e3D964Bf0405552eea04605",
+				"quote":"WETH",
+				"quoteTokenAddress":"0xc778417E063141139Fce010982780140Aa0cD5Ab",
+				"amount":"123",
+				"volume":"0.425088",
+				"price":"0.003456",
+				"intent":"buy",
+				"feeRate":"0.005",
+				"feeMinimum":"390000000000000",
+				"makerTokenAmount":"425088000000000000",
+				"takerTokenAmount":"123000000000000000000",
+				"checksum":"9e6023eb3e:cffc0cb2ee9916eecd61fbe64a1aae94"
+				}
+			}
+		}
+	  ,
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
