@@ -559,3 +559,131 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## preprocess
+
+  Returns an intent of order for asking the signature
+
+* **URL**
+
+  /v0/pdex/preprocess
+
+* **Method:**
+
+  `POST`
+  
+*  **Arguments**
+	  request of order intent
+	  - __maker__: public address of signer
+	  - __baseTokenAddress__: address of base token 
+	  - __quoteTokenAddress__: address of quote token 
+	  - __intent__: order type (buy/sell)
+	  - __amount__:  amount of order
+	  - __price__: price of order
+
+* **Returns**
+
+	order intent information for signing
+	
+  - __intent__
+	  - base: symbol of  base token
+	  - baseTokenAddress: address of base token
+	  - quote: symbol of quote token
+	  - quoteTokenAddress: address of quote token
+	  - amount: amount of order
+	  - volume: price * amount
+	  - price: price of order
+	  - intent: order type (buy/sell)
+	  - feeRate: rate of fee
+	  - feeMinimum: minimum fee
+	  - makerTokenAmount: amount of the maker token
+	  - takerTokenAmount: amount of the taker token
+	  - checksum
+  - __order__
+	  - exchangeContractAddress: contract address of exchange
+	  - maker: address of maker
+	  - taker: address of taker
+	  - feeRecipient: recipient of fee
+	  - makerFee: fee of maker
+	  - takerFee: fee  of taker
+	  - makerTokenAddress: address of maker token
+	  - takerTokenAddress: address of taker token
+	  - makerTokenAmount: amount of maker token
+	  - takerTokenAmount: amount of taker token
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+	{
+		"order": {
+			"exchangeContractAddress": "0x479CC461fEcd078F766eCc58533D6F69580CF3AC", 
+			"maker": "0x783a242Da80a6142f6B48BdBD4C1b9C6E1E0042F", 
+			"taker": "0x4Bda106325C335dF99eab7fE363cAC8A0ba2a24D", 
+			"feeRecipient": "0x0000000000000000000000000000000000000000", 
+			"makerFee": "0", 
+			"takerFee": "0", 
+			"makerTokenAddress": "0xc778417E063141139Fce010982780140Aa0cD5Ab", 
+			"takerTokenAddress": "0x0d0F936Ee4c93e25944694D6C121de94D9760F11", 
+			"makerTokenAmount": "12890000000000000", 
+			"takerTokenAmount": "100000000000000000000"
+		}, 
+		"intent": {
+			"base": "MTT", 
+			"baseTokenAddress": "0x0d0F936Ee4c93e25944694D6C121de94D9760F11", 
+			"quote": "WETH", 
+			"quoteTokenAddress": "0xc778417E063141139Fce010982780140Aa0cD5Ab", 
+			"amount": "100", 
+			"volume": "0.0125000", 
+			"price": "0.0001250", 
+			"intent": "buy", 
+			"feeRate": "0.001", 
+			"feeMinimum": "390000000000000", 
+			"makerTokenAmount": "12500000000000000", 
+			"takerTokenAmount": "100000000000000000000", 
+			"checksum": "ab5f0276b1:f8d929d5a3daeadd69abca747987ee06"
+		}
+	}
+  ```
+ * **Error Response:**
+
+   * **Code:** 400 Bad Request <br />
+		     **subcode, reason** 
+101,  'Malformed JSON'
+102, 'Invalid token address'
+103, 'Unsupported trading pair'
+104, 'Invalid intent'
+106,  'Invalid price'
+107,  'Invalid precision for price'
+108,  'Invalid amount'
+109,  'Invalid precision for amount'
+105,  'Price or amount not provided'
+111, 'Allowance not enabled for quote-token'
+112,  'Insufficient of balance for quote-token'
+113,  'Allowance not enabled for base-token'
+114,  'Insufficient of balance for base-token'
+110,  ' amount (%d<%d)'  % (volume_deno, min_fee*2)'
+
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/preprocess",
+      dataType: "json",
+      type : "POST",
+      data:
+		{
+			"maker":"0x783a242Da80a6142f6B48BdBD4C1b9C6E1E0042F",
+			"baseTokenAddress":"0x0d0F936Ee4c93e25944694D6C121de94D9760F11",
+			"quoteTokenAddress":"0xc778417E063141139Fce010982780140Aa0cD5Ab",
+			"intent":"buy",
+			"amount":"100",
+			"price":"0.0001250"
+		}
+	  ,
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
