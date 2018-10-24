@@ -1,10 +1,11 @@
 # pdex
 
-[config](https://github.com/wcho0907/pdex/blob/master/README.md#config): Returns config data about system.<br/>
-[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets): Returns all markets information about system.<br/>
-[market](https://github.com/wcho0907/pdex/blob/master/README.md#market): Returns specific market information about system.<br/>
+[config](https://github.com/wcho0907/pdex/blob/master/README.md#config): Returns config data about system<br/>
+[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets): Returns all markets information about system<br/>
+[market](https://github.com/wcho0907/pdex/blob/master/README.md#market): Returns specific market information about system<br/>
 [orderbook](https://github.com/wcho0907/pdex/blob/master/README.md#orderbook): Returns bids and asks orders of the market and related information<br/>
 [challenge](https://github.com/wcho0907/pdex/blob/master/README.md#challenge): Returns a message for asking the signature<br/>
+[verify](): Returns the server validation of signature<br/>
 ## config
 
   Returns config data about system.
