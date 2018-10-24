@@ -649,7 +649,7 @@
 
    * **Code:** 400 Bad Request <br />
 		     **subcode, reason** 
-101,  'Malformed JSON'
+101,  'Malformed JSON' <br/>
 102, 'Invalid token address'
 103, 'Unsupported trading pair'
 104, 'Invalid intent'
