@@ -649,22 +649,22 @@
 
    * **Code:** 400 Bad Request <br />
     **subcode, reason** <br />
-    
-101,  'Malformed JSON' <br/>
-102, 'Invalid token address'<br/>
-103, 'Unsupported trading pair'<br/>
-104, 'Invalid intent'<br/>
-106,  'Invalid price'<br/>
-107,  'Invalid precision for price'<br/>
-108,  'Invalid amount'<br/>
-109,  'Invalid precision for amount'<br/>
-105,  'Price or amount not provided'<br/>
-111, 'Allowance not enabled for quote-token'<br/>
-112,  'Insufficient of balance for quote-token'<br/>
-113,  'Allowance not enabled for base-token'<br/>
-114,  'Insufficient of balance for base-token'<br/>
-110,  ' amount (%d<%d)'  % (volume_deno, min_fee*2)'<br/>
-
+```    
+	101,  'Malformed JSON' <br/>
+	102, 'Invalid token address'<br/>
+	103, 'Unsupported trading pair'<br/>
+	104, 'Invalid intent'<br/>
+	106,  'Invalid price'<br/>
+	107,  'Invalid precision for price'<br/>
+	108,  'Invalid amount'<br/>
+	109,  'Invalid precision for amount'<br/>
+	105,  'Price or amount not provided'<br/>
+	111, 'Allowance not enabled for quote-token'<br/>
+	112,  'Insufficient of balance for quote-token'<br/>
+	113,  'Allowance not enabled for base-token'<br/>
+	114,  'Insufficient of balance for base-token'<br/>
+	110,  ' amount (%d<%d)'  % (volume_deno, min_fee*2)'<br/>
+```
 
 * **Sample Call:**
 
