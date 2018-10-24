@@ -648,7 +648,7 @@
  * **Error Response:**
 
    * **Code:** 400 Bad Request <br />
-		     ** subcode, reason ** 
+    **subcode, reason ** 
 101,  'Malformed JSON' <br/>
 102, 'Invalid token address'<br/>
 103, 'Unsupported trading pair'<br/>
