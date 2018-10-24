@@ -806,3 +806,97 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## order
+
+  Returns order information by specific order_hash
+
+* **URL**
+
+  /v0/pdex/order
+
+* **Method:**
+
+  `GET`
+  
+*  **Arguments**
+	  - __order_hash__
+	 
+* **Returns**
+			order(intent|array of filled|array of pending) information
+  - __order__
+	  - maker:
+	  - makerTokenAddress:
+	  - makerTokenAmount:
+	  - takerTokenAddress:
+	  - takerTokenAmount:
+	  - expirationUnixTimestampSec:
+	  - takerTokenAmountLocked:
+	  - takerTokenAmountFilled:
+	  - takerTokenAmountCancelled:
+	  - order_hash
+	  - time_submitted
+	  - status
+	  - refundStatus
+	  - avgPrice
+	  - filledAmount
+	  - volume
+	  - paid
+	  - fee
+	  - refund
+  - __intent__
+	  - baseTokenName:
+	  - quoteTokenName:
+	  - intent
+	  - price
+	  - amount
+	  - volume
+	  - feeRate
+	  - feeMinimum
+  - __filled[]__
+	  - id:
+	  - orderId:
+	  - baseTokenAddress:
+	  - quoteTokenAddress:
+	  - intent:
+	  - price:
+	  - amount:
+	  - volume:
+	  - matchId:
+	  - txHash:
+	  - blockNumber:
+	  - gasUsed:
+	  - filledMakerTokenAmount:
+	  - filledTakerTokenAmount:
+	  - paid:
+	  - fee:
+	  - refund:
+	  - time_filled:
+  - __pending[]__
+	  - matchId:
+	  - price:
+	  - amount:
+	  - txHash:
+	  - time_matched:
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+  ```
+ * **Error Response:**
+
+   * **Code:** 400 Bad Request <br />
+		  
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/order?order_hash=27815f2d6d271fafb5ca4f248feb6a61e54c9e6a053b9990304f0c7b16283264",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
