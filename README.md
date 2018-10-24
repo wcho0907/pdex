@@ -423,7 +423,7 @@
 
   ```javascript
     $.ajax({
-      url: "/v0/pdex/market?baseTokenAddress=0x0d0F936Ee4c93e25944694D6C121de94D9760F11&quoteTokenAddress=0xc778417E063141139Fce010982780140Aa0cD5Ab",
+      url: "/v0/pdex/orderbook?baseTokenAddress=0x0d0F936Ee4c93e25944694D6C121de94D9760F11&quoteTokenAddress=0xc778417E063141139Fce010982780140Aa0cD5Ab",
       dataType: "json",
       type : "GET",
       success : function(r) {
@@ -539,7 +539,7 @@
 
   ```javascript
     $.ajax({
-      url: "/v0/pdex/challenge",
+      url: "/v0/pdex/verify",
       dataType: "json",
       type : "POST",
       data: {
