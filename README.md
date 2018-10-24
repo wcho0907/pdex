@@ -9,7 +9,7 @@
 [preporcess](https://github.com/wcho0907/pdex/blob/master/README.md#preprocess): Returns an intent of order for asking the signature<br/>
 [submit](https://github.com/wcho0907/pdex/blob/master/README.md#submit): Returns the validation of order signature<br/>
 ## config
-
+[order](https://github.com/wcho0907/pdex/blob/master/README.md#order): Returns order information by specific order_hash<br/>
   Returns config data about system.
 
 * **URL**
