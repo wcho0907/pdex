@@ -493,3 +493,68 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## verify
+
+  Returns the server validation of signature
+
+* **URL**
+
+  /v0/pdex/verify
+
+* **Method:**
+
+  `POST`
+  
+*  **Arguments**
+	  payload (from return of challenge)
+	  - __address__: public address of signer
+	  - __ts__: timestamp
+	  - __nonce__: nonce
+	  - __ecSignature__: returns of signed information (v, r, s)
+
+* **Returns**
+
+	A token for authorization and its expire time
+	
+  - __token__:  hex string of message
+  - __expire__:  hex string of message
+
+  payload information
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+	{"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY3LCJpYXQiOjE1NDAzNTIzOTAsImV4cCI6MTU0MDM1Nzc5MH0.5llRMUvZyacPrRNBjjkuDclHVFoEYM9ZItSeRW7xJZo", 
+	"expire": 1540357790}
+  ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/challenge",
+      dataType: "json",
+      type : "POST",
+      data: {
+      "address":"0x783a242Da80a6142f6B48BdBD4C1b9C6E1E0042F",
+      "ts":1540352387,
+      "nonce":"f2253e49",
+      "ecSignature":
+	      {
+	      "v":28,
+	      "r":"0x46b4ffd3b940ebeb5889ab27b0a2a02858ef31904290a696692361d3a1ac91a9",
+	      "s":"0x785672547b5ccd1260d5ccf93a47f6a486f167a347ac3e775c249dc2b1c9b783"
+	      }
+	  },
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
