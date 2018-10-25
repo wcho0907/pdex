@@ -1,15 +1,16 @@
 # pdex
 
-[config](https://github.com/wcho0907/pdex/blob/master/README.md#config): Returns config data about system<br/>
-[markets](https://github.com/wcho0907/pdex/blob/master/README.md#markets): Returns all markets information about system<br/>
-[market](https://github.com/wcho0907/pdex/blob/master/README.md#market): Returns specific market information about system<br/>
-[orderbook](https://github.com/wcho0907/pdex/blob/master/README.md#orderbook): Returns bids and asks orders of the market and related information<br/>
-[challenge](https://github.com/wcho0907/pdex/blob/master/README.md#challenge): Returns a message for asking the signature<br/>
-[verify](https://github.com/wcho0907/pdex/blob/master/README.md#verify): Returns the server validation of signature<br/>
-[preporcess](https://github.com/wcho0907/pdex/blob/master/README.md#preprocess): Returns an intent of order for asking the signature<br/>
-[submit](https://github.com/wcho0907/pdex/blob/master/README.md#submit): Returns the validation of order signature<br/>
-[order](https://github.com/wcho0907/pdex/blob/master/README.md#order): Returns order information by specific order_hash<br/>
+[config](#config): Returns config data about system<br/>
+[markets](#markets): Returns all markets information about system<br/>
+[market](#market): Returns specific market information about system<br/>
+[orderbook](#orderbook): Returns bids and asks orders of the market and related information<br/>
+[challenge](#challenge): Returns a message for asking the signature<br/>
+[verify](#verify): Returns the server validation of signature<br/>
+[preporcess](#preprocess): Returns an intent of order for asking the signature<br/>
+[submit](#submit): Returns the validation of order signature<br/>
+[order](#order): Returns order information by specific order_hash<br/>
 [myorders](#myorders): Returns orders information of logged in user with conditions<br/>
+
 ## config
 
   Returns config data about system.
