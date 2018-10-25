@@ -826,19 +826,19 @@
 * **Returns**
 			order(intent|array of filled|array of pending) information
   - __order__
-	  - maker:
-	  - makerTokenAddress:
-	  - makerTokenAmount:
-	  - takerTokenAddress:
-	  - takerTokenAmount:
-	  - expirationUnixTimestampSec:
-	  - takerTokenAmountLocked:
-	  - takerTokenAmountFilled:
-	  - takerTokenAmountCancelled:
+	  - maker: address of maker
+	  - makerTokenAddress: contract address of maker token
+	  - makerTokenAmount: amount of maker
+	  - takerTokenAddress: contract address of taker token
+	  - takerTokenAmount: amount of taker
+	  - expirationUnixTimestampSec: expired time of order
+	  - takerTokenAmountLocked: locked amount of taker token
+	  - takerTokenAmountFilled: filled amount of taker token
+	  - takerTokenAmountCancelled: cancelled amount of taker token
 	  - order_hash
 	  - time_submitted
-	  - status
-	  - refundStatus
+	  - status: new/open/closed/expired/cancelled
+	  - refundStatus: not-available/claimable/claimed/refunded/pending
 	  - avgPrice
 	  - filledAmount
 	  - volume
@@ -846,9 +846,9 @@
 	  - fee
 	  - refund
   - __intent__
-	  - baseTokenName:
-	  - quoteTokenName:
-	  - intent
+	  - baseTokenName: symbol of the base token
+	  - quoteTokenName: symbol of the quote token
+	  - intent: order intent - (buy/sell)
 	  - price
 	  - amount
 	  - volume
@@ -856,34 +856,103 @@
 	  - feeMinimum
   - __filled[]__
 	  - id:
-	  - orderId:
-	  - baseTokenAddress:
-	  - quoteTokenAddress:
-	  - intent:
-	  - price:
-	  - amount:
-	  - volume:
-	  - matchId:
-	  - txHash:
-	  - blockNumber:
-	  - gasUsed:
-	  - filledMakerTokenAmount:
-	  - filledTakerTokenAmount:
-	  - paid:
-	  - fee:
-	  - refund:
-	  - time_filled:
+	  - orderId: sequence number of order
+	  - baseTokenAddress
+	  - quoteTokenAddress
+	  - intent
+	  - price
+	  - amount
+	  - volume
+	  - matchId: sequence number of match
+	  - txHash: hash of the transaction in chain
+	  - blockNumber: block of the transaction happened
+	  - gasUsed: used gas
+	  - filledMakerTokenAmount
+	  - filledTakerTokenAmount
+	  - paid
+	  - fee
+	  - refund
+	  - time_filled
   - __pending[]__
-	  - matchId:
-	  - price:
-	  - amount:
-	  - txHash:
-	  - time_matched:
+	  - matchId
+	  - price
+	  - amount
+	  - txHash
+	  - time_matched
 * **Success Response:**
 
   * **Code:** 200 <br />
     **Content:** 
    ```
+	{
+	"order":
+		{
+			"maker":"0x21B93E9B4De782787993eE4d3289c45A3024c862",
+			"makerTokenAddress":"0xfF67881f8d12F372d91Baae9752eB3631FF0eD00",
+			"makerTokenAmount":"100000000000000000000",
+			"takerTokenAddress":"0xc778417E063141139Fce010982780140Aa0cD5Ab",
+			"takerTokenAmount":"279720000000000000",
+			"expirationUnixTimestampSec":"1540460471044",
+			"takerTokenAmountLocked":"27972000000000000",
+			"takerTokenAmountFilled":"195804000000000000",
+			"takerTokenAmountCancelled":"0",
+		    "order_hash":
+		"27815f2d6d271fafb5ca4f248feb6a61e54c9e6a053b9990304f0c7b16283264",
+			"time_submitted":"2018-10-24T09:41:14.365000Z",
+			"status":"open",
+			"refundStatus":"not-available",
+			"avgPrice":"0.002800000000000000",
+			"filledAmount":"70.000000000000000000",
+			"volume":"0.196000000000000000",
+			"paid":"0.195804000000000000",
+			"fee":"0.000196000000000000",
+			"refund":"0.000000000000000000"
+		},
+	"intent":
+		{
+			"baseTokenName":"ZRX",
+			"quoteTokenName":"WETH",
+			"intent":"sell",
+			"price":"0.002800000000000000",
+			"amount":"100.000000000000000000",
+			"volume":"0.280000000000000000",
+			"feeRate":"0.00100",
+			"feeMinimum":"0.000130000000000000"
+		},
+	"filled":
+		[
+			{
+				"id":6197,
+				"orderId":13503,
+				"baseTokenAddress":"0xfF67881f8d12F372d91Baae9752eB3631FF0eD00",
+				"quoteTokenAddress":"0xc778417E063141139Fce010982780140Aa0cD5Ab",
+				"intent":"sell",
+				"price":"0.002800000000000000",
+				"amount":"50.000000000000000000",
+				"volume":"0.140000000000000000",
+				"matchId":6438,
+				"txHash":"0xd5902bea40514c7e5501664b9b6933404fff24edfadbfdb9c810157aaf07a8c7",
+				"blockNumber":4291516,
+				"gasUsed":"0.000201942",
+				"filledMakerTokenAmount":"50000000000000000000",
+				"filledTakerTokenAmount":"139860000000000000",
+				"paid":"0.139860000000000000",
+				"fee":"0.000140000000000000",
+				"refund":"0.000000000000000000",
+				"time_filled":"2018-10-24T09:44:34Z"
+			}
+		],
+	"pending":
+		[
+			{
+				"matchId":6440,
+				"price":0.0028,
+				"amount":"10.000000000000000000",
+				"txHash":"0xbdcfa00c9d0903eabf0ea1eaa732aeb9969725203bac983dd2d02f3e98b49991",
+				"time_matched":"2018-10-24T09:51:21Z"
+			}
+		]
+	}   
   ```
  * **Error Response:**
 
@@ -901,4 +970,4 @@
       }
     });
   ```
-[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
