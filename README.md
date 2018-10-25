@@ -12,7 +12,7 @@
 [myorders](#myorders): Returns orders information of logged in user with conditions<br/>
 [cancel-order](#cancel-order): Cancel order by specific order_hash<br/>
 [trade-history](#trade-history): Returns trade history data (price, amount, time) of system</br>
-[wallet/locked](#wallet/locked): Returns total unsettled volume of quote token(buy order) or base token(sell order)<br/>
+[wallet/locked](#walletlocked): Returns total unsettled volume of quote token(buy order) or base token(sell order)<br/>
 ## config
 
   Returns config data about system.
