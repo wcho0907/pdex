@@ -27,8 +27,6 @@
   
 *  **Arguments**
 
-   **Required:**
- 
    None
 
 * **Returns**
@@ -1274,7 +1272,9 @@
 *  **Headers**  
 	- __authorization__: 'Bearer ' + token string of logged in user   
 *  **Arguments**
-	None
+
+   None
+
 * **Returns**
 
 	- [contract address of token]: total unsettled volume of quote token(buy order) or base token(sell order)
