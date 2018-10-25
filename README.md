@@ -1259,3 +1259,47 @@
     });
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+## wallet/locked
+
+  Returns total unsettled volume of quote token(buy order) or base token(sell order)
+
+* **URL**
+
+  /v0/pdex/wallet/locked
+
+* **Method:**
+
+  `GET`
+*  **Headers**  
+	- __authorization__: 'Bearer ' + token string of logged in user   
+*  **Arguments**
+	None
+* **Returns**
+
+	- [contract address of token]: total unsettled volume of quote token(buy order) or base token(sell order)
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```
+	{"0xc778417E063141139Fce010982780140Aa0cD5Ab": "33000000000000000"}
+    ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/wallet/locked",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
