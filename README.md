@@ -10,7 +10,7 @@
 [submit](#submit): Returns the validation of order signature<br/>
 [order](#order): Returns order information by specific order_hash<br/>
 [myorders](#myorders): Returns orders information of logged in user with conditions<br/>
-
+[cancel-order](#cancel-order): Cancel order by specific order_hash<br/>
 ## config
 
   Returns config data about system.
@@ -1149,5 +1149,28 @@
         console.log(r);
       }
     });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## cancel-order
+
+  Cancel by specific order_hash
+
+* **URL**
+
+  /v0/pdex/cancel-order
+
+* **Method:**
+
+  `GET`
+*  **Arguments**
+	  - __order_hash__
+* **Returns**
+			None
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+   ```
+	N/A
   ```
 [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
