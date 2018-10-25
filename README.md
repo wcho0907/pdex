@@ -51,8 +51,8 @@
     ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -191,8 +191,8 @@
   ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -329,8 +329,8 @@
   ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -422,8 +422,8 @@
   ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -483,8 +483,8 @@
   ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -537,8 +537,8 @@
   ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -1243,8 +1243,8 @@
     ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -1289,8 +1289,8 @@
     ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -1357,8 +1357,8 @@
     ```
  * **Error Response:**
 
-   * **Code:** 404 NOT FOUND <br />
-     **Content:** `{ error : "User doesn't exist" }`
+   * **Code:** 400 Bad Request <br />
+      
 
 * **Sample Call:**
 
@@ -1367,6 +1367,56 @@
       url: "/v0/pdex/claims?include_orders=false",
       dataType: "json",
       type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+## claim
+
+  Refund total claimable extra profit
+
+* **URL**
+
+  /v0/pdex/claim
+* **Method:**
+
+  `POST`
+*  **Headers**  
+	- __authorization__: 'Bearer ' + token string of logged in user
+
+*  **Arguments**
+
+    - __claimId__: unique ID of claim
+	
+* **Returns**
+
+	- __maker__: address of user
+	- __claimId__: unique ID of claim
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```
+	{
+	"maker": "0x6f44Cceb49b4A5812d54b6F494FC2feBF25511eD", 
+	"claimId": 11876
+	}
+    ```
+ * **Error Response:**
+
+   * **Code:** 400 Bad Request <br />
+      
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/claim",
+      dataType: "json",
+      type : "POST",
+      data:  {claimId:  11876},
       success : function(r) {
         console.log(r);
       }
