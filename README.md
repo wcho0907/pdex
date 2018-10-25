@@ -1051,7 +1051,7 @@
 		  - txHash
 		  - time_matched
   - __walletLocked__
-	  - [wallet address]: total unsettled volume of quote token(buy order) or base token(sell order)
+	  - [contract address of token]: total unsettled volume of quote token(buy order) or base token(sell order)
 * **Success Response:**
 
   * **Code:** 200 <br />
