@@ -11,6 +11,7 @@
 [order](#order): Returns order information by specific order_hash<br/>
 [myorders](#myorders): Returns orders information of logged in user with conditions<br/>
 [cancel-order](#cancel-order): Cancel order by specific order_hash<br/>
+[trade-history](#trade-history): Returns trade history data (price, amount, time) of system</br>
 ## config
 
   Returns config data about system.
@@ -1190,3 +1191,71 @@
     });
   ```
   [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+## trade-history
+
+  Returns trade history data (price, amount, time) of system.
+
+* **URL**
+
+  /v0/pdex/trade-history
+
+* **Method:**
+
+  `GET`
+  
+*  **Arguments**
+
+   - __baseTokenAddress__: contract address of base token
+   - __quoteTokenAddress__: contract address of quote token
+
+* **Returns**
+
+  - __History[]__
+	  - time
+	  - price
+	  - amount
+	  - trend: up/down
+  - __count__  number of array    
+  - __baseToken__: symbol of base token
+  - __quoteToken__: symbol of quote token
+  - __baseTokenAddress__: contract address of base token
+  - __quoteTokenAddress__: contract address of quote token
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```
+	{"history": 
+	[
+		{
+			"time": "2018-10-25T06:09:10Z", 
+			"price": 0.002804400000000000, 
+			"amount": "15.127200000000000000", 
+			"trend": "down"
+		}
+	], 
+	"count": 20, 
+	"baseToken": "ZRX", 
+	"quoteToken": "WETH", 
+	"baseTokenAddress": "0xfF67881f8d12F372d91Baae9752eB3631FF0eD00",
+	"quoteTokenAddress": "0xc778417E063141139Fce010982780140Aa0cD5Ab"}
+    ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/trade-history?baseTokenAddress=0xfF67881f8d12F372d91Baae9752eB3631FF0eD00&quoteTokenAddress=0xc778417E063141139Fce010982780140Aa0cD5Ab",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
