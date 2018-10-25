@@ -1173,4 +1173,20 @@
    ```
 	N/A
   ```
-[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
+ * **Error Response:**
+
+   * **Code:** 400 Bad Request <br />
+		  
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/cancel-order",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+  [:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex) 
