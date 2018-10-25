@@ -13,6 +13,7 @@
 [cancel-order](#cancel-order): Cancel order by specific order_hash<br/>
 [trade-history](#trade-history): Returns trade history data (price, amount, time) of system</br>
 [wallet/locked](#walletlocked): Returns total unsettled volume of quote token(buy order) or base token(sell order)<br/>
+[claims](#claims): Returns total claimable extra profit information<br/>
 ## config
 
   Returns config data about system.
@@ -1296,6 +1297,74 @@
   ```javascript
     $.ajax({
       url: "/v0/pdex/wallet/locked",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+[:top:](https://github.com/wcho0907/pdex/blob/master/README.md#pdex)
+## claims
+
+  Returns total claimable extra profit information
+
+* **URL**
+
+  /v0/pdex/claims
+* **Method:**
+
+  `GET`
+*  **Headers**  
+	- __authorization__: 'Bearer ' + token string of logged in user
+
+*  **Arguments**
+
+    - __include_orders__: true/false
+	
+* **Returns**
+
+	- __maker__: address of user
+	- __claimable[]__
+		- quoteTokenAddress: contract address of token
+		- claimId: unique ID of claim 
+		- decimals: decimals of token
+		- status: not-available/claimable/claimed/refunded/pending
+		- num_of_orders
+		- amount: total claimable extra profit
+		- fee
+		- received: amount - fee 
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```
+	{
+	"maker": "0x7d3bbBA1cc43EE25010E73d5CD6D90f63F095161", 
+	"claimable": 
+		[
+			{"quoteTokenAddress": "0xc778417E063141139Fce010982780140Aa0cD5Ab", 
+			"claimId": 2983, 
+			"symbol": "WETH", 
+			"decimals": 18, 
+			"status": "claimable", 
+			"num_of_orders": 4, 
+			"amount": "0.001410793419999999", 
+			"fee": "0.000038000000000000", 
+			"received": "0.001372793419999999"}
+		]
+	}
+    ```
+ * **Error Response:**
+
+   * **Code:** 404 NOT FOUND <br />
+     **Content:** `{ error : "User doesn't exist" }`
+
+* **Sample Call:**
+
+  ```javascript
+    $.ajax({
+      url: "/v0/pdex/claims?include_orders=false",
       dataType: "json",
       type : "GET",
       success : function(r) {
