@@ -14,6 +14,7 @@
 [trade-history](#trade-history): Returns trade history data (price, amount, time) of system</br>
 [wallet/locked](#walletlocked): Returns total unsettled volume of quote token(buy order) or base token(sell order)<br/>
 [claims](#claims): Returns total claimable extra profit information<br/>
+[claim](#claim): Refund total claimable extra profit<br/>
 ## config
 
   Returns config data about system.
